@@ -1,0 +1,78 @@
+2024-06-24 18:08:06,499 p=3444395 u=upszot n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-06-24 18:08:06,598 p=3444395 u=upszot n=ansible | PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:06,609 p=3444395 u=upszot n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,746 p=3444395 u=upszot n=ansible | ok: [localhost]
+2024-06-24 18:08:07,775 p=3444395 u=upszot n=ansible | TASK [include_role : 2do_parcial] ***********************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,805 p=3444395 u=upszot n=ansible | TASK [2do_parcial : debug] ******************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,817 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-06-24 18:08:07,836 p=3444395 u=upszot n=ansible | TASK [Otra tarea] ***************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,851 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-20 01:44:34,629 p=9982 u=luli n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was
+127.0.0.1
+
+2024-11-20 01:44:34,833 p=9982 u=luli n=ansible | PLAY [all] *******************************************************************************************
+2024-11-20 01:44:34,844 p=9982 u=luli n=ansible | TASK [Gathering Facts] *******************************************************************************
+2024-11-20 01:44:34,979 p=9982 u=luli n=ansible | fatal: [127.0.0.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '127.0.0.1' (ED25519) to the list of known hosts.\r\nluli@127.0.0.1: Permission denied (publickey,password).", "unreachable": true}
+2024-11-20 01:44:37,372 p=9982 u=luli n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at
+/usr/bin/python3.10, but future installation of another Python interpreter could change the meaning
+of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+
+2024-11-20 01:44:37,373 p=9982 u=luli n=ansible | ok: [localhost]
+2024-11-20 01:44:37,382 p=9982 u=luli n=ansible | TASK [include_role : 2do_parcial] ********************************************************************
+2024-11-20 01:44:37,420 p=9982 u=luli n=ansible | included: 2do_parcial for localhost
+2024-11-20 01:44:37,427 p=9982 u=luli n=ansible | TASK [2do_parcial : debug] ***************************************************************************
+2024-11-20 01:44:37,444 p=9982 u=luli n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-11-20 01:44:37,452 p=9982 u=luli n=ansible | TASK [2do_parcial : Crear estructura de directorios] *************************************************
+2024-11-20 01:44:37,813 p=9982 u=luli n=ansible | changed: [localhost] => (item=alumno)
+2024-11-20 01:44:38,036 p=9982 u=luli n=ansible | changed: [localhost] => (item=equipo)
+2024-11-20 01:44:38,048 p=9982 u=luli n=ansible | TASK [2do_parcial : Generar archivo datos_alumno.txt] ************************************************
+2024-11-20 01:44:38,665 p=9982 u=luli n=ansible | changed: [localhost]
+2024-11-20 01:44:38,677 p=9982 u=luli n=ansible | TASK [2do_parcial : Generar archivo datos_equipo.txt] ************************************************
+2024-11-20 01:44:39,092 p=9982 u=luli n=ansible | changed: [localhost]
+2024-11-20 01:44:39,102 p=9982 u=luli n=ansible | TASK [2do_parcial : Configurar sudoers para el grupo "2PSupervisores"] *******************************
+2024-11-20 01:44:39,513 p=9982 u=luli n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/etc/sudoers'
+2024-11-20 01:44:39,514 p=9982 u=luli n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/home/luli/.ansible/tmp/ansible-tmp-1732067079.122655-10206-160002799604814/AnsiballZ_lineinfile.py\", line 107, in <module>\n    _ansiballz_main()\n  File \"/home/luli/.ansible/tmp/ansible-tmp-1732067079.122655-10206-160002799604814/AnsiballZ_lineinfile.py\", line 99, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/home/luli/.ansible/tmp/ansible-tmp-1732067079.122655-10206-160002799604814/AnsiballZ_lineinfile.py\", line 47, in invoke_module\n    runpy.run_module(mod_name='ansible.modules.lineinfile', init_globals=dict(_module_fqn='ansible.modules.lineinfile', _modlib_path=modlib_path),\n  File \"/usr/lib/python3.10/runpy.py\", line 224, in run_module\n    return _run_module_code(code, init_globals, run_name, mod_spec)\n  File \"/usr/lib/python3.10/runpy.py\", line 96, in _run_module_code\n    _run_code(code, mod_globals, init_globals,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/tmp/ansible_ansible.builtin.lineinfile_payload_o24txzn2/ansible_ansible.builtin.lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 633, in <module>\n  File \"/tmp/ansible_ansible.builtin.lineinfile_payload_o24txzn2/ansible_ansible.builtin.lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 623, in main\n  File \"/tmp/ansible_ansible.builtin.lineinfile_payload_o24txzn2/ansible_ansible.builtin.lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 312, in present\nPermissionError: [Errno 13] Permission denied: b'/etc/sudoers'\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}
+2024-11-20 01:44:39,516 p=9982 u=luli n=ansible | PLAY RECAP *******************************************************************************************
+2024-11-20 01:44:39,517 p=9982 u=luli n=ansible | 127.0.0.1                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-20 01:44:39,517 p=9982 u=luli n=ansible | localhost                  : ok=6    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-20 01:45:39,062 p=10230 u=luli n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was
+127.0.0.1
+
+2024-11-20 01:45:39,213 p=10230 u=luli n=ansible | PLAY [all] *******************************************************************************************
+2024-11-20 01:45:39,221 p=10230 u=luli n=ansible | TASK [Gathering Facts] *******************************************************************************
+2024-11-20 01:45:39,341 p=10230 u=luli n=ansible | fatal: [127.0.0.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '127.0.0.1' (ED25519) to the list of known hosts.\r\nluli@127.0.0.1: Permission denied (publickey,password).", "unreachable": true}
+2024-11-20 01:45:40,444 p=10230 u=luli n=ansible | [WARNING]: Platform linux on host localhost is using the discovered Python interpreter at
+/usr/bin/python3.10, but future installation of another Python interpreter could change the meaning
+of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+
+2024-11-20 01:45:40,445 p=10230 u=luli n=ansible | ok: [localhost]
+2024-11-20 01:45:40,453 p=10230 u=luli n=ansible | TASK [include_role : 2do_parcial] ********************************************************************
+2024-11-20 01:45:40,485 p=10230 u=luli n=ansible | included: 2do_parcial for localhost
+2024-11-20 01:45:40,493 p=10230 u=luli n=ansible | TASK [2do_parcial : debug] ***************************************************************************
+2024-11-20 01:45:40,510 p=10230 u=luli n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-11-20 01:45:40,518 p=10230 u=luli n=ansible | TASK [2do_parcial : Crear estructura de directorios] *************************************************
+2024-11-20 01:45:40,867 p=10230 u=luli n=ansible | ok: [localhost] => (item=alumno)
+2024-11-20 01:45:41,061 p=10230 u=luli n=ansible | ok: [localhost] => (item=equipo)
+2024-11-20 01:45:41,074 p=10230 u=luli n=ansible | TASK [2do_parcial : Generar archivo datos_alumno.txt] ************************************************
+2024-11-20 01:45:41,627 p=10230 u=luli n=ansible | ok: [localhost]
+2024-11-20 01:45:41,637 p=10230 u=luli n=ansible | TASK [2do_parcial : Generar archivo datos_equipo.txt] ************************************************
+2024-11-20 01:45:42,051 p=10230 u=luli n=ansible | ok: [localhost]
+2024-11-20 01:45:42,059 p=10230 u=luli n=ansible | TASK [2do_parcial : Configurar sudoers para el grupo "2PSupervisores"] *******************************
+2024-11-20 01:45:42,442 p=10230 u=luli n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: PermissionError: [Errno 13] Permission denied: b'/etc/sudoers'
+2024-11-20 01:45:42,442 p=10230 u=luli n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "Traceback (most recent call last):\n  File \"/home/luli/.ansible/tmp/ansible-tmp-1732067142.079831-10450-197899250143187/AnsiballZ_lineinfile.py\", line 107, in <module>\n    _ansiballz_main()\n  File \"/home/luli/.ansible/tmp/ansible-tmp-1732067142.079831-10450-197899250143187/AnsiballZ_lineinfile.py\", line 99, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/home/luli/.ansible/tmp/ansible-tmp-1732067142.079831-10450-197899250143187/AnsiballZ_lineinfile.py\", line 47, in invoke_module\n    runpy.run_module(mod_name='ansible.modules.lineinfile', init_globals=dict(_module_fqn='ansible.modules.lineinfile', _modlib_path=modlib_path),\n  File \"/usr/lib/python3.10/runpy.py\", line 224, in run_module\n    return _run_module_code(code, init_globals, run_name, mod_spec)\n  File \"/usr/lib/python3.10/runpy.py\", line 96, in _run_module_code\n    _run_code(code, mod_globals, init_globals,\n  File \"/usr/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/tmp/ansible_ansible.builtin.lineinfile_payload_6gfzgjj0/ansible_ansible.builtin.lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 633, in <module>\n  File \"/tmp/ansible_ansible.builtin.lineinfile_payload_6gfzgjj0/ansible_ansible.builtin.lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 623, in main\n  File \"/tmp/ansible_ansible.builtin.lineinfile_payload_6gfzgjj0/ansible_ansible.builtin.lineinfile_payload.zip/ansible/modules/lineinfile.py\", line 312, in present\nPermissionError: [Errno 13] Permission denied: b'/etc/sudoers'\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}
+2024-11-20 01:45:42,444 p=10230 u=luli n=ansible | PLAY RECAP *******************************************************************************************
+2024-11-20 01:45:42,445 p=10230 u=luli n=ansible | 127.0.0.1                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-20 01:45:42,445 p=10230 u=luli n=ansible | localhost                  : ok=6    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
